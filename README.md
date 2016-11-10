@@ -1,5 +1,5 @@
 # Loader
-IOS application for downloading files from links and save them in your device's storage, used obj-c\n
+IOS application for downloading files from links and save them in your device's storage, used obj-c
 
 Logic of app working: root view controller in UINavigationController is TableOfFilesVC based on UIViewController, which contains tableView, toolbar with two not active button (current app cache size/device's free space) and progress view, and navigation bar with buttons "edit" and "+". When "+" button was pressed navigation controller does segue at AddFileVC, when user enters link and name of file which will download, then called public method "addFileFromLink:link AndName:name" in tableOfFilesVC which initialize Loader with link and name and then add its to tableOfFilesVC's array. Our tableOfFilesVC manage of mutableArray where Loaders contain and then tableView displays them in cell.
 All working with downloading file and then save its to storage doing Loader. 
