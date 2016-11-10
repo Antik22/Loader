@@ -8,7 +8,7 @@ At reusing or creating cell take a loader for displays its value in cell, exactl
 
 <p align="center">
 <img src="https://pp.vk.me/c836420/v836420107/da15/czbKWWwVIok.jpg" width="250"> 
-<img src="https://pp.vk.me/c836420/v836420107/da0c/B2b2wHD-RJc.jpg" width="250">  
+<img src="https://pp.vk.me/c836420/v836420107/da0c/B2b2wHD-RJc.jpg" width="250">    
 <img src="https://pp.vk.me/c836420/v836420107/d9fa/OeeJ3pDckFA.jpg" width="250"> 
 <img src="https://pp.vk.me/c836420/v836420107/d9f1/J43Auj3PtCs.jpg" width="250"> 
 </p>
