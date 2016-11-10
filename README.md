@@ -2,7 +2,7 @@
 
 #### *IOS app for downloading files from links and save them in your device's storage, written on Obj-C*
 
-**Logic of app working**: root view controller in UINavigationController is TableOfFilesVC based on UIViewController, which contains: 
+**Logic of app working**: root view controller in *UINavigationController* is **TableOfFilesVC** based on *UIViewController*, which contains: 
 - tableView, 
 - toolbar with two not active bar button (current app cache size/device's free space) 
 - progress view, and navigation bar with buttons "edit" and "+".
