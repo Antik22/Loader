@@ -6,7 +6,7 @@ Logic of app working: root view controller in UINavigationController is TableOfF
 All working with downloading file and then save its to storage doing Loader. 
 At reusing or creating cell take a loader for displays its value in cell, exactly are progress of downloading, current size, expected size, start date and name. At removing cell by standard type, first of all we need removeObserver from Loader which update changes of variables, we doing that by get cellForIndexPath and called public method which removeObserver and than just removeObjectAtIndex from TableOfFilesVC's array and Loader must deallocate by automatically. 
 
-<img src="https://pp.vk.me/c836420/v836420107/da15/czbKWWwVIok.jpg" width="250">
-<img src="https://pp.vk.me/c836420/v836420107/da0c/B2b2wHD-RJc.jpg" width="250">
-<img src="https://pp.vk.me/c836420/v836420107/d9fa/OeeJ3pDckFA.jpg" width="250">
-<img src="https://pp.vk.me/c836420/v836420107/d9f1/J43Auj3PtCs.jpg" width="250">
+<img src="https://pp.vk.me/c836420/v836420107/da15/czbKWWwVIok.jpg" width="250"> 
+<img src="https://pp.vk.me/c836420/v836420107/da0c/B2b2wHD-RJc.jpg" width="250">  
+<img src="https://pp.vk.me/c836420/v836420107/d9fa/OeeJ3pDckFA.jpg" width="250"> 
+<img src="https://pp.vk.me/c836420/v836420107/d9f1/J43Auj3PtCs.jpg" width="250"> 
