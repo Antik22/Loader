@@ -7,7 +7,6 @@
 //
 
 #import "TableOfFilesVC.h"
-#import "AddFileVC.h"
 #import "FileCell.h"
 #import "Loader.h"
 
@@ -28,7 +27,8 @@ static TableOfFilesVC* singleton;
 
 @implementation TableOfFilesVC
 
-// test link: http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-CD-1.iso
+// test link (600mb): http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-CD-1.iso
+// test link (500kb): https://pp.vk.me/c626231/v626231981/33e74/eeMoajhWTpc.jpg
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -140,20 +140,6 @@ static TableOfFilesVC* singleton;
     cell.loader = loader;
 
     return cell;
-}
-
-
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"addFileIdentifier"]) {
-        
-        AddFileVC* addFileController = (AddFileVC*)[segue destinationViewController];
-        addFileController.prevController = self;
-    }
-
 }
 
 

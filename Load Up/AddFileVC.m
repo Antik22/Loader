@@ -11,6 +11,7 @@
 
 @interface AddFileVC () <UITextFieldDelegate>
 
+// UI elements
 @property (weak, nonatomic) IBOutlet UITextField *linkField;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 
@@ -21,6 +22,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // set active on the link field
     [self.linkField becomeFirstResponder];
 }
 
@@ -29,7 +31,7 @@
 }
 
 
-- (BOOL)requestToControllerForAddLoader {
+- (BOOL)requestToAddLoaderInTableOfFiles {
     
     NSString* link = self.linkField.text;
     NSString* name = self.nameField.text;
@@ -37,7 +39,8 @@
     if ([link isEqualToString:@""] || [name isEqualToString:@""])
         return FALSE;
 
-    [self.prevController addFileFromLink:link andName:name];
+    TableOfFilesVC* tableOfFilesVC = (TableOfFilesVC*)[self.navigationController.viewControllers objectAtIndex:0];
+    [tableOfFilesVC addFileFromLink:link andName:name];
     return TRUE;
 }
 
@@ -51,7 +54,7 @@
         
     } else {
         
-        if ([self requestToControllerForAddLoader]) {
+        if ([self requestToAddLoaderInTableOfFiles]) {
             
             // return back to tableViewController
             [self.navigationController popViewControllerAnimated:YES];
