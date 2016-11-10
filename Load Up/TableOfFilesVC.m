@@ -104,6 +104,10 @@ static TableOfFilesVC* singleton;
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
+        
+        FileCell* fileCell = (FileCell*)[tableView cellForRowAtIndexPath:indexPath];
+        [fileCell removeCellFromTable];
+        
         Loader* loader = [self.loaderArray objectAtIndex:indexPath.row];
         [loader removeAll];
         [_loaderArray removeObjectAtIndex:indexPath.row];

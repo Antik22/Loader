@@ -124,9 +124,13 @@
     return normalView;
 }
 
-- (void)dealloc {
+- (void)removeCellFromTable {
     
-    NSLog(@"dealloc was called in cell");
+    if (!self.loader.isDone) {
+        [self.loader removeObserver:self forKeyPath:@"currentSize"];
+        [self.loader removeObserver:self forKeyPath:@"expectedSize"];
+        [self.loader removeObserver:self forKeyPath:@"isDone"];
+    }
 }
 
 - (IBAction)controll:(id)sender {
