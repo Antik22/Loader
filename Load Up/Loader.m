@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSURLSessionDataTask *ourTask;
 @property (strong, nonatomic) NSMutableData *ourData;
+@property (strong, nonatomic) NSURLSession* defaultSession;
 
 @end
 
@@ -93,9 +94,9 @@
         _isDone = FALSE;
         
         NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultConfigObject delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        self.defaultSession = [NSURLSession sessionWithConfiguration:defaultConfigObject delegate:self delegateQueue:[NSOperationQueue mainQueue]];
         
-        self.ourTask = [defaultSession dataTaskWithURL:[NSURL URLWithString:link]];
+        self.ourTask = [self.defaultSession dataTaskWithURL:[NSURL URLWithString:link]];
         [self.ourTask resume];
         
     }
@@ -114,12 +115,14 @@
     
     NSLog(@"dealloc called");
     // we need stop downloading or/and delete file from Documents
-    [self removeAll];
+    
 }
 
 - (void)removeAll {
 
     [self.ourTask cancel];
+    [self.defaultSession invalidateAndCancel];
+   // self.ourTask = nil; // doesn't need because "dealloc" should called and do this on itself
     
     // delete file from file system
     if (self.isDone) {
