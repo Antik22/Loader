@@ -91,6 +91,10 @@
             self.controllButton.hidden = TRUE;
             self.state.text = [FileCell normalSizeFromLength:self.loader.currentSize];
             self.progressBar.progress = 1.f;
+            
+            [self.loader removeObserver:self forKeyPath:@"currentSize"];
+            [self.loader removeObserver:self forKeyPath:@"expectedSize"];
+            [self.loader removeObserver:self forKeyPath:@"isDone"];
 
         }
     }
@@ -120,7 +124,14 @@
     return normalView;
 }
 
-
+- (void)removeCellFromTable {
+    
+    if (!self.loader.isDone) {
+        [self.loader removeObserver:self forKeyPath:@"currentSize"];
+        [self.loader removeObserver:self forKeyPath:@"expectedSize"];
+        [self.loader removeObserver:self forKeyPath:@"isDone"];
+    }
+}
 
 - (IBAction)controll:(id)sender {
     
