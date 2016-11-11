@@ -24,7 +24,7 @@
 + (NSUInteger)getFreeSpace;
 - (id)initWithLink:(NSString*)link andName:(NSString*)name;
 - (id) initWithName:(NSString*)name andSize:(NSUInteger)size andDate:(NSDate*)date andPath:(NSString*)path;
-- (void)removeAll;
+- (void)canceAndRemove;
 
 - (void) pause;
 - (void) resume;

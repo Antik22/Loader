@@ -106,10 +106,10 @@ static TableOfFilesVC* singleton;
         
         
         FileCell* fileCell = (FileCell*)[tableView cellForRowAtIndexPath:indexPath];
-        [fileCell removeCellFromTable];
+        [fileCell removeObserverFromLoader];
         
         Loader* loader = [self.loaderArray objectAtIndex:indexPath.row];
-        [loader removeAll];
+        [loader canceAndRemove];
         [_loaderArray removeObjectAtIndex:indexPath.row];
         [TableOfFilesVC updateMemoryBar];
         

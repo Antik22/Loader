@@ -15,6 +15,6 @@
 @property (weak, nonatomic) Loader* loader;
 
 + (NSString*)normalSizeFromLength:(NSUInteger)size;
-- (void)removeCellFromTable;
+- (void)removeObserverFromLoader;
 
 @end

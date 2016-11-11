@@ -19,6 +19,15 @@
 
 @implementation AddFileVC
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // set backButton color
+    UIColor* backButtonColor = [UIColor colorWithRed:(27.0f/255.0f) green:(88.0f/255.0f) blue:(122.0f/255.0f) alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = backButtonColor;
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
