@@ -14,6 +14,6 @@ At removing cell by standard type, first of all we need **removeObserver** from 
 And of course interface is full responsive at any devices, by using **AutoLayout**.
 ## Screenshots:
 <p align="center">
-<img src="https://pp.vk.me/c836420/v836420107/e033/Qg3ock0jxYI.jpg" width="250">
+<img src="https://pp.vk.me/c836420/v836420107/e051/EWzMmXRfSFo.jpg" width="250">
 <img src="https://pp.vk.me/c836420/v836420107/e02a/suJ1DWGKy4s.jpg" width="250">
 </p>
