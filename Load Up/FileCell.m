@@ -140,13 +140,13 @@
 - (void)removeObserverFromLoader {
     
     NSLog(@"remove Observer from Loader");
-    /*
+    
     [_loader removeObserver:self forKeyPath:@"currentSize"];
     [_loader removeObserver:self forKeyPath:@"expectedSize"];
     [_loader removeObserver:self forKeyPath:@"isDone"];
-    */
     
-    [[NSNotificationCenter defaultCenter] removeObserver:_loader];
+    
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
 
