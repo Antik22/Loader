@@ -11,4 +11,8 @@ When "+" button was pressed navigation controller does segue at AddFileVC, when 
 All working with downloading file and then save its to storage doing Loader. 
 At reusing or creating cell take a loader for displays its value in cell, exactly are progress of downloading, current size, expected size, start date and name. At removing cell by standard type, first of all we need removeObserver from Loader which update changes of variables, we doing that by get cellForIndexPath and called public method which removeObserver and than just removeObjectAtIndex from TableOfFilesVC's array and Loader must deallocate by automatically. 
 
-
+## Screenshots:
+<p align="center">
+<img src="https://pp.vk.me/c836420/v836420107/e02a/suJ1DWGKy4s.jpg" width="250">
+<img src="https://pp.vk.me/c836420/v836420107/e033/Qg3ock0jxYI.jpg" width="250">
+</p>
