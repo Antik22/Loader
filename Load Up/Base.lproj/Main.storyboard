@@ -15,35 +15,37 @@
                         <viewControllerLayoutGuide type="bottom" id="JFt-Gc-Xma"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4rS-aE-xSC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C3k-AM-YZW">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.42012569598732219" green="0.28496929058846365" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C3k-AM-YZW">
+                                <color key="backgroundColor" red="0.95205372570000002" green="0.73025518659999999" blue="0.19137996439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.109357141" green="0.34645670649999999" blue="0.47889333960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fileCell" rowHeight="60" id="UUx-dO-eNU" customClass="FileCell">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UUx-dO-eNU" id="AUm-dP-5KB">
-                                            <frame key="frameInset" width="320" height="60"/>
+                                            <frame key="frameInset" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="241" verticalHuggingPriority="251" text="File Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="7Xy-69-VOv" userLabel="Name Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="241" verticalHuggingPriority="251" text="File Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="7Xy-69-VOv" userLabel="Name Label">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="jF0-4r-k01"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0032214294190000001" green="0.06564938277" blue="0.1499639153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-bX-QSc">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-bX-QSc">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="TZW-j6-Zl2"/>
                                                         <constraint firstAttribute="width" constant="100" id="u0n-oK-tZz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <state key="normal" title="II pause"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                    <state key="normal" title="II pause">
+                                                        <color key="titleColor" red="0.109357141" green="0.34645670649999999" blue="0.47889333960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="controll:" destination="UUx-dO-eNU" eventType="touchUpInside" id="SoI-tR-53p"/>
                                                     </connections>
@@ -57,12 +59,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-18-Yrc" userLabel="Download Progress Bar">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vSJ-18-Yrc" userLabel="Download Progress Bar">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="9Hn-xa-HCp"/>
                                                     </constraints>
+                                                    <color key="progressTintColor" red="0.109357141" green="0.34645670649999999" blue="0.47889333960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" red="0.60079646109999996" green="0.84817963839999999" blue="0.86690467599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </progressView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="241" verticalHuggingPriority="252" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="NPa-vh-vl0" userLabel="State Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="241" verticalHuggingPriority="252" text="State" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="NPa-vh-vl0" userLabel="State Label">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="DkP-C2-GgG"/>
                                                     </constraints>
@@ -73,13 +77,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="vSJ-18-Yrc" secondAttribute="trailing" id="0CL-j0-CQ0"/>
+                                                <constraint firstItem="NPa-vh-vl0" firstAttribute="top" secondItem="sKR-i0-E63" secondAttribute="bottom" id="EdY-Mq-Kdj"/>
                                                 <constraint firstItem="NPa-vh-vl0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ebK-bX-QSc" secondAttribute="trailing" constant="20" id="Gra-bb-f5M"/>
-                                                <constraint firstItem="vSJ-18-Yrc" firstAttribute="leading" secondItem="AUm-dP-5KB" secondAttribute="leading" constant="10" id="Hal-eK-nXY"/>
+                                                <constraint firstItem="vSJ-18-Yrc" firstAttribute="leading" secondItem="AUm-dP-5KB" secondAttribute="leading" constant="15" id="Hal-eK-nXY"/>
                                                 <constraint firstItem="sKR-i0-E63" firstAttribute="leading" secondItem="7Xy-69-VOv" secondAttribute="trailing" constant="20" id="ICj-R0-Zaq"/>
                                                 <constraint firstAttribute="trailing" secondItem="NPa-vh-vl0" secondAttribute="trailing" constant="10" id="IGz-5l-WB7"/>
                                                 <constraint firstAttribute="bottom" secondItem="vSJ-18-Yrc" secondAttribute="bottom" id="JBc-zV-o2v"/>
                                                 <constraint firstItem="ebK-bX-QSc" firstAttribute="leading" secondItem="AUm-dP-5KB" secondAttribute="leading" constant="20" id="OGb-o9-Var"/>
-                                                <constraint firstItem="NPa-vh-vl0" firstAttribute="top" secondItem="ebK-bX-QSc" secondAttribute="top" id="SMz-FL-Itk"/>
                                                 <constraint firstItem="sKR-i0-E63" firstAttribute="top" secondItem="AUm-dP-5KB" secondAttribute="top" constant="2" id="WBW-P2-EOi"/>
                                                 <constraint firstItem="ebK-bX-QSc" firstAttribute="top" secondItem="7Xy-69-VOv" secondAttribute="bottom" id="c0F-Dg-QEZ"/>
                                                 <constraint firstItem="7Xy-69-VOv" firstAttribute="top" secondItem="AUm-dP-5KB" secondAttribute="top" constant="2" id="c1w-gP-g2S"/>
@@ -87,11 +91,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="sKR-i0-E63" secondAttribute="trailing" constant="10" id="nlK-FR-Z0A"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.1926563382" green="0.99592008129999998" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.95205372570000002" green="0.73025518659999999" blue="0.19137996439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="controllButton" destination="ebK-bX-QSc" id="P2Z-pi-ndU"/>
                                             <outlet property="downloadDate" destination="sKR-i0-E63" id="2wl-3i-pNz"/>
                                             <outlet property="name" destination="7Xy-69-VOv" id="6oa-bA-aeS"/>
+                                            <outlet property="nameHeightConstraint" destination="jF0-4r-k01" id="QAK-Od-cmj"/>
                                             <outlet property="progressBar" destination="vSJ-18-Yrc" id="huL-3j-OHa"/>
                                             <outlet property="state" destination="NPa-vh-vl0" id="irX-CD-vGd"/>
                                         </connections>
@@ -102,23 +107,28 @@
                                     <outlet property="delegate" destination="Xxd-Pv-v02" id="iqw-t9-TVn"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-r3-Whm">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1n-r3-Whm">
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9qp-0b-cLb"/>
-                                    <barButtonItem id="VWH-gE-gWm" userLabel="Used Memory Item"/>
+                                    <barButtonItem id="VWH-gE-gWm" userLabel="Used Memory Item">
+                                        <color key="tintColor" red="0.10446222870000001" green="0.32480317349999999" blue="0.43254339689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" id="nbV-UF-rDc" userLabel="Parent of Progress Bar">
-                                        <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" id="nbu-Uo-Wk9" userLabel="Full Memory Progress Bar">
-                                            <rect key="frame" x="85" y="21" width="150" height="2.5"/>
+                                        <progressView key="customView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" id="nbu-Uo-Wk9" userLabel="Full Memory Progress Bar">
+                                            <rect key="frame" x="112" y="21" width="150" height="2.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="trackTintColor" red="0.63915330171585083" green="0.63926076889038086" blue="0.63913047313690186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="progressTintColor" red="0.109357141" green="0.34645670649999999" blue="0.47889333960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="trackTintColor" red="0.60079646109999996" green="0.84817963839999999" blue="0.86690467599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </progressView>
                                     </barButtonItem>
-                                    <barButtonItem id="qFo-cW-uGT" userLabel="All Memory Item"/>
+                                    <barButtonItem id="qFo-cW-uGT" userLabel="All Memory Item">
+                                        <color key="tintColor" red="0.10446222870000001" green="0.32480317349999999" blue="0.43254339689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iFL-LD-neg"/>
                                 </items>
+                                <color key="barTintColor" red="0.36146035789999997" green="0.70285314320000003" blue="0.75521582369999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="C3k-AM-YZW" firstAttribute="top" secondItem="4rS-aE-xSC" secondAttribute="top" id="5sF-yy-a2d"/>
                             <constraint firstItem="JFt-Gc-Xma" firstAttribute="top" secondItem="I1n-r3-Whm" secondAttribute="bottom" id="P5O-f3-GnL"/>
@@ -131,11 +141,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Downloads" id="W0v-np-SBf">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="dRu-H3-kcr">
+                            <color key="tintColor" red="0.10588235294117647" green="0.34509803921568627" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="edit:" destination="Xxd-Pv-v02" id="jNY-dG-myH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="d7T-qT-zvS">
+                            <color key="tintColor" red="0.109357141" green="0.34645670649999999" blue="0.47889333960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="TEP-5N-Dgl" kind="show" identifier="addFileIdentifier" id="htH-aG-PwQ"/>
                             </connections>
@@ -162,10 +174,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MWD-W3-BK0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5rc-yj-5Us">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" minimumFontSize="35" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MCX-3r-rfs">
+                                <color key="backgroundColor" red="0.60079646109999996" green="0.84817963839999999" blue="0.86690467599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="mY0-q6-bte"/>
                                 </constraints>
@@ -177,6 +190,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="link" minimumFontSize="35" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-qb-lR8">
+                                <color key="backgroundColor" red="0.60079646109999996" green="0.84817963839999999" blue="0.86690467599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Ffb-re-uPX"/>
                                 </constraints>
@@ -188,7 +202,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88266307119999998" green="0.9090195298" blue="0.92395818230000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MCX-3r-rfs" firstAttribute="leading" secondItem="5rc-yj-5Us" secondAttribute="leading" constant="10" id="239-Pj-Cdv"/>
                             <constraint firstAttribute="trailing" secondItem="MCX-3r-rfs" secondAttribute="trailing" constant="10" id="2sC-Xc-2mW"/>
@@ -198,7 +212,9 @@
                             <constraint firstItem="seZ-qb-lR8" firstAttribute="top" secondItem="nBL-jg-e6f" secondAttribute="bottom" constant="40" id="fs1-E6-wtS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Adding File" id="5m3-IS-cv6"/>
+                    <navigationItem key="navigationItem" title="Adding File" id="5m3-IS-cv6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="rEf-71-RbB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="linkField" destination="seZ-qb-lR8" id="LUf-iw-7RS"/>
                         <outlet property="nameField" destination="MCX-3r-rfs" id="om8-1a-tRb"/>
@@ -215,6 +231,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qdo-9k-TAi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.36146035789999997" green="0.70285314320000003" blue="0.75521582369999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Xxd-Pv-v02" kind="relationship" relationship="rootViewController" id="327-R9-9fO"/>

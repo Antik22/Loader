@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *downloadDate;
 @property (weak, nonatomic) IBOutlet UILabel *state;
 @property (weak, nonatomic) IBOutlet UIButton *controllButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* nameHeightConstraint;
+
+@property(strong, nonatomic) UIView* backCellView;
 
 @end
 
@@ -29,7 +32,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    NSLog(@"cell init");
+    if (!self.backCellView) {
+        self.backCellView = [[UIView alloc] init];
+        UIColor *selectedCellColor = [UIColor colorWithRed:(153.0f/255.0f)
+                                                    green:(216.0f/255.0f)
+                                                    blue:(221.0f/255.0f)
+                                                    alpha:1.0f];
+        
+        self.backCellView.backgroundColor = selectedCellColor;
+    }
+    [self setSelectedBackgroundView:self.backCellView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -50,13 +63,16 @@
     
     if (self.loader.isDone) {
         _isRunning = FALSE;
+        self.nameHeightConstraint.constant = 58;
         self.controllButton.hidden = TRUE;
+        
         self.state.text = [FileCell normalSizeFromLength:self.loader.currentSize];
         self.progressBar.progress = 1.f;
         
     } else {
-    
+        
         _isRunning = TRUE;
+        self.nameHeightConstraint.constant = 28;
         self.controllButton.hidden = FALSE;
         self.state.text = @"No Answer";
         self.progressBar.progress = 0.f;
@@ -88,7 +104,13 @@
         } else if ([keyPath isEqualToString:@"isDone"] && self.loader.isDone) {
         
             _isRunning = FALSE;
+            
             self.controllButton.hidden = TRUE;
+            self.nameHeightConstraint.constant = 58;
+            [UIView animateWithDuration:0.5 animations:^{
+                [self layoutIfNeeded];
+            } completion:^(BOOL finished) {}];
+            
             self.state.text = [FileCell normalSizeFromLength:self.loader.currentSize];
             self.progressBar.progress = 1.f;
             
@@ -124,18 +146,28 @@
     return normalView;
 }
 
-- (void)removeCellFromTable {
+- (void)prepareForReuse {
+    NSLog(@"cell reuse");
+    
+    [self removeObserverFromLoader];
+    
+}
+
+- (void)removeObserverFromLoader {
     
     if (!self.loader.isDone) {
+        NSLog(@"remove Observer from active Loader");
+        
         [self.loader removeObserver:self forKeyPath:@"currentSize"];
         [self.loader removeObserver:self forKeyPath:@"expectedSize"];
         [self.loader removeObserver:self forKeyPath:@"isDone"];
     }
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 - (IBAction)controll:(id)sender {
-    
-    
+
     if (self.isRunning) {
         self.isRunning = FALSE;
         [self.controllButton setTitle:@"> resume" forState:UIControlStateNormal];

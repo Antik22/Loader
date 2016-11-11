@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class TableOfFilesVC;
-
 @interface AddFileVC : UIViewController
-
-@property (strong, nonatomic) TableOfFilesVC* prevController;
 
 @end

@@ -118,7 +118,7 @@
     
 }
 
-- (void)removeAll {
+- (void)canceAndRemove {
 
     [self.ourTask cancel];
     [self.defaultSession invalidateAndCancel];

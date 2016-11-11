@@ -11,6 +11,7 @@
 
 @interface AddFileVC () <UITextFieldDelegate>
 
+// UI elements
 @property (weak, nonatomic) IBOutlet UITextField *linkField;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 
@@ -18,9 +19,19 @@
 
 @implementation AddFileVC
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // set backButton color
+    UIColor* backButtonColor = [UIColor colorWithRed:(27.0f/255.0f) green:(88.0f/255.0f) blue:(122.0f/255.0f) alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = backButtonColor;
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // set active on the link field
     [self.linkField becomeFirstResponder];
 }
 
@@ -29,7 +40,7 @@
 }
 
 
-- (BOOL)requestToControllerForAddLoader {
+- (BOOL)requestToAddLoaderInTableOfFiles {
     
     NSString* link = self.linkField.text;
     NSString* name = self.nameField.text;
@@ -37,7 +48,8 @@
     if ([link isEqualToString:@""] || [name isEqualToString:@""])
         return FALSE;
 
-    [self.prevController addFileFromLink:link andName:name];
+    TableOfFilesVC* tableOfFilesVC = (TableOfFilesVC*)[self.navigationController.viewControllers objectAtIndex:0];
+    [tableOfFilesVC addFileFromLink:link andName:name];
     return TRUE;
 }
 
@@ -51,7 +63,7 @@
         
     } else {
         
-        if ([self requestToControllerForAddLoader]) {
+        if ([self requestToAddLoaderInTableOfFiles]) {
             
             // return back to tableViewController
             [self.navigationController popViewControllerAnimated:YES];

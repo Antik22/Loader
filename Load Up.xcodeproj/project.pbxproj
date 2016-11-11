@@ -17,7 +17,6 @@
 		F464E3591DCB3DA100ED5772 /* TableOfFilesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F464E3581DCB3DA100ED5772 /* TableOfFilesVC.m */; };
 		F49D5BF31DCB8C9500B3800A /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = F49D5BF21DCB8C9500B3800A /* Loader.m */; };
 		F49D5BF61DCBA20700B3800A /* FileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F49D5BF51DCBA20700B3800A /* FileCell.m */; };
-		F49D5BF81DCBA88300B3800A /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49D5BF71DCBA88300B3800A /* FileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		F49D5BF21DCB8C9500B3800A /* Loader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loader.m; sourceTree = "<group>"; };
 		F49D5BF41DCBA20700B3800A /* FileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCell.h; sourceTree = "<group>"; };
 		F49D5BF51DCBA20700B3800A /* FileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCell.m; sourceTree = "<group>"; };
-		F49D5BF71DCBA88300B3800A /* FileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				F464E34E1DCB2B2A00ED5772 /* LaunchScreen.storyboard */,
 				F464E3511DCB2B2A00ED5772 /* Info.plist */,
 				F464E3491DCB2B2A00ED5772 /* Load_Up.xcdatamodeld */,
-				F49D5BF71DCBA88300B3800A /* FileCell.xib */,
 				F464E33D1DCB2B2A00ED5772 /* Supporting Files */,
 			);
 			path = "Load Up";
@@ -176,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F464E3501DCB2B2A00ED5772 /* LaunchScreen.storyboard in Resources */,
-				F49D5BF81DCBA88300B3800A /* FileCell.xib in Resources */,
 				F464E34D1DCB2B2A00ED5772 /* Assets.xcassets in Resources */,
 				F464E3481DCB2B2A00ED5772 /* Main.storyboard in Resources */,
 			);
