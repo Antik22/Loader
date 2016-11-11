@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *controllButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* nameHeightConstraint;
 
+@property(strong, nonatomic) UIView* backCellView;
+
 @end
 
 @implementation FileCell
@@ -30,7 +32,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    NSLog(@"cell init");
+    if (!self.backCellView) {
+        self.backCellView = [[UIView alloc] init];
+        UIColor *selectedCellColor = [UIColor colorWithRed:(153.0f/255.0f)
+                                                    green:(216.0f/255.0f)
+                                                    blue:(221.0f/255.0f)
+                                                    alpha:1.0f];
+        
+        self.backCellView.backgroundColor = selectedCellColor;
+    }
+    [self setSelectedBackgroundView:self.backCellView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -93,14 +105,11 @@
         
             _isRunning = FALSE;
             
-            
+            self.controllButton.hidden = TRUE;
             self.nameHeightConstraint.constant = 58;
             [UIView animateWithDuration:0.5 animations:^{
                 [self layoutIfNeeded];
-                
-            } completion:^(BOOL finished) {
-                self.controllButton.hidden = TRUE;
-            }];
+            } completion:^(BOOL finished) {}];
             
             self.state.text = [FileCell normalSizeFromLength:self.loader.currentSize];
             self.progressBar.progress = 1.f;
@@ -137,15 +146,22 @@
     return normalView;
 }
 
+- (void)prepareForReuse {
+    NSLog(@"cell reuse");
+    
+    [self removeObserverFromLoader];
+    
+}
+
 - (void)removeObserverFromLoader {
     
-    NSLog(@"remove Observer from Loader");
-    
-    [_loader removeObserver:self forKeyPath:@"currentSize"];
-    [_loader removeObserver:self forKeyPath:@"expectedSize"];
-    [_loader removeObserver:self forKeyPath:@"isDone"];
-    
-    
+    if (!self.loader.isDone) {
+        NSLog(@"remove Observer from active Loader");
+        
+        [self.loader removeObserver:self forKeyPath:@"currentSize"];
+        [self.loader removeObserver:self forKeyPath:@"expectedSize"];
+        [self.loader removeObserver:self forKeyPath:@"isDone"];
+    }
     //[[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
